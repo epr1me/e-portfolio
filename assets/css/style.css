@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    box-sizing: border-box;
+}
+a {
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../fonts/Catamaran/Catamaran-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('../fonts/Source_Code_Pro/SourceCodePro-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 1.5rem;
+}
+
+menu {
+    height: 7rem;
+}
+
+.logo {
+    width: fit-content;
+    margin-top: 1.5rem;
+}
+
+h1 {
+    display: inline-block;
+    font-family: 'Catamaran';
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: lowercase;
+    letter-spacing: 0.1rem;
+}
+
+h1 a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+h1 a:visited {
+    color: #fff;
+}
+
+.heading {
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    background-color: #191e48;
+    color: #fff;
+}
+
+
+.heading.paul,
+.heading.dogar {
+    position: static;
+    transition: transform .3s ease-in-out, margin-left .5s ease-in-out;
+}
+
+.heading.paul {
+    transform: rotateZ(-90deg);
+    color: #fff;
+}
+
+.heading.dogar {
+    transform: rotateZ(90deg);
+    color: #fff;
+    margin-left: -2rem;
+}
+.heading-link:hover .heading.dogar {
+    margin-left: 0;
+}
+
+.heading-link:hover .heading.paul,
+.heading-link:hover .heading.dogar {
+    transform: rotateZ(0deg);
+    position: static;
+}
+
+section {
+    padding: 2rem 0;
+}
