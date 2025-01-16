@@ -52,21 +52,32 @@
 			$sidebar_a
 				.addClass('scrolly')
 				.on('click', function() {
-
 					var $this = $(this);
 
-					// External link? Bail.
-						if ($this.attr('href').charAt(0) != '#')
-							return;
+					// Get the href attribute value.
+					var href = $this.attr('href');
 
-					// Deactivate all links.
+					// Check if the link is external. Bail if it doesn't start with '#'.
+					if (!href || href.charAt(0) !== '#') return;
+
+					// Attempt to validate and process the href as a selector.
+					try {
+						var $section = $(href);
+
+						// If the section doesn't exist, bail.
+						if ($section.length === 0) return;
+
+						// Deactivate all links.
 						$sidebar_a.removeClass('active');
 
-					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
+						// Activate link and lock it to prevent Scrollex from reactivating other links during scroll.
 						$this
 							.addClass('active')
 							.addClass('active-locked');
-
+					} catch (e) {
+						console.error('Error processing href:', href, e);
+						return;
+					}
 				})
 				.each(function() {
 
