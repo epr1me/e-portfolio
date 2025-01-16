@@ -51,45 +51,22 @@
 
 			$sidebar_a
 				.addClass('scrolly')
-				.on('click', function(event) {
+				.on('click', function() {
+
 					var $this = $(this);
-					var href = $this.attr('href');
 
-					// Check if the href is a full URL or an external link.
-					if (!href || href.indexOf('#') !== 0) {
-						// If it's not a local anchor link, allow the default behavior and exit.
-						return;
-					}
-
-					// Prevent the default behavior of the anchor tag.
-					event.preventDefault();
-
-					try {
-						// Extract the ID from the href (e.g., #section).
-						var target = href.substring(1); // Remove the '#' character.
-						var $target = $('#' + target); // Convert to a valid ID selector.
-
-						// If no matching section is found, log a warning and skip further processing.
-						if ($target.length === 0) {
-							console.warn(`No matching section found for href: ${href}`);
+					// External link? Bail.
+						if ($this.attr('href').charAt(0) != '#')
 							return;
-						}
 
-						// Deactivate all sidebar links.
+					// Deactivate all links.
 						$sidebar_a.removeClass('active');
 
-						// Activate the clicked link and lock it.
+					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
 						$this
 							.addClass('active')
 							.addClass('active-locked');
 
-						// Smooth scroll to the target section.
-						$('html, body').animate({
-							scrollTop: $target.offset().top
-						}, 500);
-					} catch (error) {
-						console.error(`Error processing href: ${href}`, error);
-					}
 				})
 				.each(function() {
 
