@@ -51,41 +51,18 @@
 
 			$sidebar_a
 				.addClass('scrolly')
-				.on('click', function (event) {
+				.on('click', function() {
+
 					var $this = $(this);
-					var href = $this.attr('href');
 
-					// Prevent default behavior for valid cases.
-					event.preventDefault();
+					// Deactivate all links.
+						$sidebar_a.removeClass('active');
 
-					// Check if the link starts with '#' (local ID).
-					if (href && href.charAt(0) === '#') {
-						var target = href.substring(1); // Remove '#' from the href.
-						var $target = $('#' + target); // Convert to a valid jQuery ID selector.
+					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
+						$this
+							.addClass('active')
+							.addClass('active-locked');
 
-						// Check if the target exists.
-						if ($target.length > 0) {
-							// Deactivate all sidebar links.
-							$sidebar_a.removeClass('active');
-
-							// Activate the clicked link and lock it.
-							$this
-								.addClass('active')
-								.addClass('active-locked');
-
-							// Scroll to the target section smoothly.
-							$('html, body').animate({
-								scrollTop: $target.offset().top
-							}, 500);
-						} else {
-							console.warn(`Target not found: ${href}`);
-						}
-					} else if (href && (href.startsWith('/') || href.startsWith('http'))) {
-						// Handle absolute or relative paths.
-						window.location.href = href; // Allow normal navigation.
-					} else {
-						console.warn(`Unrecognized link format: ${href}`);
-					}
 				})
 				.each(function() {
 
