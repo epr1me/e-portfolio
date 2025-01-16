@@ -45,65 +45,78 @@
 			});
 
 	// Sidebar.
-		if ($sidebar.length > 0) {
+	if ($sidebar.length > 0) {
 
-			var $sidebar_a = $sidebar.find('a');
+		var $sidebar_a = $sidebar.find('a');
 
-			$sidebar_a
-				.addClass('scrolly')
-				.on('click', function() {
+		$sidebar_a
+			.addClass('scrolly')
+			.on('click', function (event) {
+				var $this = $(this);
+				var href = $this.attr('href');
 
-					var $this = $(this);
+				// Deactivate all links.
+				$sidebar_a.removeClass('active');
 
-					// Deactivate all links.
-						$sidebar_a.removeClass('active');
+				// Handle local anchors (e.g., #section).
+				if (href && href.charAt(0) === '#') {
+					var id = href.substring(1); // Remove '#' to get the ID.
+					var $section = $('#' + id); // Select the target section by ID.
 
-					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-						$this
-							.addClass('active')
-							.addClass('active-locked');
+					// Prevent default behavior and scroll to the section if it exists.
+					if ($section.length > 0) {
+						event.preventDefault();
 
-				})
-				.each(function() {
+						// Activate link and lock it.
+						$this.addClass('active').addClass('active-locked');
 
-					var	$this = $(this),
-						id = $this.attr('href'),
-						$section = $(id);
+						// Scroll to the section smoothly.
+						$('html, body').animate({
+							scrollTop: $section.offset().top
+						}, 500);
+					}
+				} else {
+					// For external or relative links, allow normal navigation.
+					window.location.href = href;
+				}
+			})
+			.each(function () {
+				var $this = $(this);
+				var href = $this.attr('href');
 
-					// Scrollex.
-						$section.scrollex({
-							mode: 'middle',
-							top: '-20vh',
-							bottom: '-20vh',
-							initialize: function() {
+				// Skip non-anchor links.
+				if (!href || href.charAt(0) !== '#') return;
 
-								// Deactivate section.
-									$section.addClass('inactive');
+				var id = href.substring(1); // Remove '#' to get the ID.
+				var $section = $('#' + id);
 
-							},
-							enter: function() {
+				if ($section.length > 0) {
+					// Scrollex for smooth transitions.
+					$section.scrollex({
+						mode: 'middle',
+						top: '-20vh',
+						bottom: '-20vh',
+						initialize: function () {
+							$section.addClass('inactive'); // Deactivate section initially.
+						},
+						enter: function () {
+							// Activate section.
+							$section.removeClass('inactive');
 
-								// Activate section.
-									$section.removeClass('inactive');
-
-								// No locked links? Deactivate all links and activate this section's one.
-									if ($sidebar_a.filter('.active-locked').length == 0) {
-
-										$sidebar_a.removeClass('active');
-										$this.addClass('active');
-
-									}
-
-								// Otherwise, if this section's link is the one that's locked, unlock it.
-									else if ($this.hasClass('active-locked'))
-										$this.removeClass('active-locked');
-
+							// If no locked links, activate this section's link.
+							if ($sidebar_a.filter('.active-locked').length == 0) {
+								$sidebar_a.removeClass('active');
+								$this.addClass('active');
 							}
-						});
-
-				});
-
-		}
+							// Unlock if this section's link is locked.
+							else if ($this.hasClass('active-locked')) {
+								$this.removeClass('active-locked');
+							}
+						}
+					});
+				}
+			});
+	}
 
 	// Scrolly.
 		$('.scrolly').scrolly({
