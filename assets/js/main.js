@@ -55,25 +55,27 @@
 					var $this = $(this);
 					var href = $this.attr('href');
 
-					// If the href is an external link (full URL), skip processing.
-					if (!href || href.charAt(0) !== '#') {
+					// Check if the href is a full URL or an external link.
+					if (!href || href.indexOf('#') !== 0) {
+						// If it's not a local anchor link, allow the default behavior and exit.
 						return;
 					}
 
-					// Prevent the default behavior (e.g., navigation).
+					// Prevent the default behavior of the anchor tag.
 					event.preventDefault();
 
 					try {
-						// Try to find the target section on the page.
-						var $target = $(href);
+						// Extract the ID from the href (e.g., #section).
+						var target = href.substring(1); // Remove the '#' character.
+						var $target = $('#' + target); // Convert to a valid ID selector.
 
-						// If no matching section exists, skip further processing.
+						// If no matching section is found, log a warning and skip further processing.
 						if ($target.length === 0) {
 							console.warn(`No matching section found for href: ${href}`);
 							return;
 						}
 
-						// Deactivate all links.
+						// Deactivate all sidebar links.
 						$sidebar_a.removeClass('active');
 
 						// Activate the clicked link and lock it.
@@ -81,7 +83,7 @@
 							.addClass('active')
 							.addClass('active-locked');
 
-						// Scroll to the target section.
+						// Smooth scroll to the target section.
 						$('html, body').animate({
 							scrollTop: $target.offset().top
 						}, 500);
