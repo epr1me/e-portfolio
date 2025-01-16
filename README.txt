@@ -1,33 +1,28 @@
-Hyperspace by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Welcome to My ePortfolio
 
+Hi there!
 
-So I've had the wireframe for this particular design kicking around for some time, but with all
-the other interesting (and in some cases, semi-secret) projects I've been working on it took me
-a little while to get to actually designing and coding it. Fortunately, things have eased up
-enough for me to finaly get around to it, so I'm happy to introduce Hyperspace: a fun, blocky,
-one-page design with a lot of color, a bit of animation, and an additional "generic" page template
-(because hey, even one-page sites usually need an interior page or two). Hope you dig it :)
+I’m an Artificial Intelligence Master’s student, and this ePortfolio serves as a showcase of my academic journey, professional development, and the key projects I’ve worked on during my studies.
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+You can explore my most important projects, gain insights into the concepts I’ve mastered, and see how I’ve applied AI principles to solve real-world problems.
 
-(* = not included)
+About This ePortfolio
+	•	URL: ePortfolio Link
+	•	Purpose:
+	•	To highlight my growth in AI expertise through coursework and hands-on projects.
+	•	To demonstrate my proficiency in data analysis, machine learning, neural networks, and other AI-related disciplines.
+	•	To reflect on my journey and future aspirations in the field of Artificial Intelligence.
 
-AJ
-aj@lkn.io | @ajlkn
+Key Features
+	•	Showcase of Projects:
+Discover the most significant projects from my coursework, including innovative applications in neural networks, natural language processing, and computer vision.
+	•	Reflections:
+Insights and reflections on my learning experience, challenges overcome, and lessons gained throughout the program.
+	•	Skills Development:
+A summary of technical and soft skills acquired during my master’s program.
 
+Explore My Work
 
-Credits:
+This ePortfolio is a living document of my academic and professional journey. Feel free to browse through the projects and reflections, and connect with me if you’d like to discuss anything in more detail.
 
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+Thank you for visiting!
