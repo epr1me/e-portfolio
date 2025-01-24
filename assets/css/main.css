@@ -89,6 +89,7 @@ input, select, textarea {
 }
 .next-unit i {
 	font-family: 'Font Awesome 5 Free';
+	font-style: normal;
 }
 
 @media screen and (max-width: 1500px) {
