@@ -71,6 +71,31 @@ input, select, textarea {
 	appearance: none;
 }
 
+.mb-1em {
+	margin-bottom: 1em;
+}
+
+.previous-unit,
+.next-unit {
+	position: fixed;
+	top: calc(50vh - 25px);
+}
+.previous-unit {
+	left: 10px;
+}
+.next-unit {
+	right: 10px;
+}
+
+@media screen and (max-width: 1500px) {
+	.previous-unit,
+	.next-unit {
+		display: none;
+	}
+}
+
+
+
 /* Basic */
 
 	@-ms-viewport {
