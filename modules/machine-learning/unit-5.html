@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Unit 5 - Jaccard Coefficient Calculations</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="../../index.html" class="title">Paul Dogar</a>
+				<nav>
+					<ul>
+						<li><a href="/e-portfolio/index.html">Back Home</a></li>
+						<li><a href="#intro">Machine Learning</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Unit 3 - Jaccard Coefficient Calculations</h1>
+							<div>
+								<h2>Calculations:</h2>
+								<p>The Jaccard coefficient is calculated using the formula:</p>
+								<code>J(A, B) = |A ∩ B| / |A ∪ B|</code>
+								<p>Where:</p>
+								<ul>
+									<li><code>|A ∩ B|</code>: The number of shared attributes (intersection).</li>
+									<li><code>|A ∪ B|</code>: The total number of attributes (union).</li>
+								</ul>
+								<h3>Calculations:</h3>
+								<ul>
+									<li><strong>Jack and Mary:</strong> <code>|A ∩ B| = 3</code>, <code>|A ∪ B| = 7</code>, <code>J(Jack, Mary) = 3 / 7 ≈ 0.43</code></li>
+									<li><strong>Jack and Jim:</strong> <code>|A ∩ B| = 3</code>, <code>|A ∪ B| = 7</code>, <code>J(Jack, Jim) = 3 / 7 ≈ 0.43</code></li>
+									<li><strong>Jim and Mary:</strong> <code>|A ∩ B| = 2</code>, <code>|A ∪ B| = 8</code>, <code>J(Jim, Mary) = 2 / 8 = 0.25</code></li>
+								</ul>
+							</div>
+
+							<div>
+								<h2>Jaccard Coefficient Results</h2>
+								<ul>
+									<li><strong>Jack and Mary:</strong> 0.43</li>
+									<li><strong>Jack and Jim:</strong> 0.43</li>
+									<li><strong>Jim and Mary:</strong> 0.25</li>
+								</ul>
+							</div>
+
+							<h2>Task Overview</h2>
+							<p><strong>Objective:</strong> Calculated Jaccard coefficients for pairs of individuals based on their pathological test results to evaluate similarity.</p>
+							<p><strong>Key Pairs:</strong></p>
+							<ul>
+								<li>Jack and Mary</li>
+								<li>Jack and Jim</li>
+								<li>Jim and Mary</li>
+							</ul>
+
+							<h2>Learning Outcomes</h2>
+							<h3>1. Legal, Social, Ethical, and Professional Issues</h3>
+							<ul>
+								<li>Demonstrated understanding of ethical concerns in analyzing personal health data, such as ensuring privacy and preventing misuse.</li>
+								<li>Highlighted the importance of anonymizing sensitive datasets to maintain compliance with data protection laws like GDPR.</li>
+								<li>Addressed the role of similarity measures in decision-making systems (e.g., healthcare), ensuring unbiased and fair algorithms.</li>
+							</ul>
+
+							<h3>2. Dataset Applicability and Challenges</h3>
+							<ul>
+								<li>Discussed the challenges in working with incomplete or ambiguous data, as seen in entries like "N" (No) and "P" (Positive).</li>
+								<li>Emphasized the need for clear labeling and preprocessing to ensure data quality for machine learning applications.</li>
+								<li>Explored how similarity metrics like the Jaccard coefficient can aid in clustering or classification tasks.</li>
+							</ul>
+
+							<h3>3. Collaboration and Feedback</h3>
+							<ul>
+								<li>Participated in team discussions on the implications of similarity metrics in sensitive domains like healthcare.</li>
+								<li>Received feedback to improve clarity in handling missing or unclear data and reporting outcomes effectively.</li>
+							</ul>
+
+							<h2>Artefact: Jaccard Coefficient Calculations</h2>
+							<ul>
+								<li><strong>Jack and Mary:</strong> Similarity score based on shared test results.</li>
+								<li><strong>Jack and Jim:</strong> Highlighted differences in cough and test-1 results impacting the coefficient.</li>
+								<li><strong>Jim and Mary:</strong> Discussed data points leading to minimal overlap and low similarity.</li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>
