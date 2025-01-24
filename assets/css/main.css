@@ -101,6 +101,11 @@ input, select, textarea {
 	}
 }
 
+@media screen and (max-width: 736px) {
+	.pt-10-m {
+		padding-top: 10px;
+	}
+}
 
 
 /* Basic */
