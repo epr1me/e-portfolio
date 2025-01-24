@@ -79,6 +79,7 @@ input, select, textarea {
 .next-unit {
 	position: fixed !important;
 	top: calc(50vh - 25px);
+	z-index: 999;
 }
 .previous-unit {
 	left: 10px;
@@ -95,6 +96,7 @@ input, select, textarea {
 	.next-unit {
 		position: absolute !important;
 		margin-top: 10px;
+		top: inherit;
 	}
 }
 
