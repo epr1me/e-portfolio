@@ -77,7 +77,7 @@ input, select, textarea {
 
 .previous-unit,
 .next-unit {
-	position: fixed;
+	position: fixed !important;
 	top: calc(50vh - 25px);
 }
 .previous-unit {
@@ -86,11 +86,15 @@ input, select, textarea {
 .next-unit {
 	right: 10px;
 }
+.next-unit i {
+	font-family: 'Font Awesome 5 Free';
+}
 
 @media screen and (max-width: 1500px) {
 	.previous-unit,
 	.next-unit {
-		display: none;
+		position: absolute !important;
+		margin-top: 10px;
 	}
 }
 
