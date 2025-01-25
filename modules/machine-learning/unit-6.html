@@ -74,6 +74,25 @@
 							</ul>
 						</div>
 					</section>
+				<section class="wrapper">
+					<pre>
+						<code>
+# Example of EDA from Airbnb project
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the dataset
+df = pd.read_csv("AB_NYC_2019.csv")
+
+# Visualize price distribution
+plt.hist(df['price'], bins=50, color='blue', alpha=0.7)
+plt.title('Price Distribution')
+plt.xlabel('Price')
+plt.ylabel('Frequency')
+plt.show()
+						</code>
+</pre>
+				</section>
 
 			</div>
 
