@@ -59,29 +59,31 @@
 						</div>
 					</section>
 				<section class="wrapper">
-					<pre>
-						<code>
-# Gradient descent for linear regression
-import numpy as np
+					<section class="inner">
+						<pre>
+							<code>
+	# Gradient descent for linear regression
+	import numpy as np
 
-def gradient_descent(x, y, lr, iterations):
-    m, b = 0, 0
-    n = len(x)
-    for _ in range(iterations):
-        y_pred = m * x + b
-        cost = (1/n) * sum((y - y_pred)**2)
-        dm = -(2/n) * sum(x * (y - y_pred))
-        db = -(2/n) * sum(y - y_pred)
-        m -= lr * dm
-        b -= lr * db
-    return m, b, cost
+	def gradient_descent(x, y, lr, iterations):
+		m, b = 0, 0
+		n = len(x)
+		for _ in range(iterations):
+			y_pred = m * x + b
+			cost = (1/n) * sum((y - y_pred)**2)
+			dm = -(2/n) * sum(x * (y - y_pred))
+			db = -(2/n) * sum(y - y_pred)
+			m -= lr * dm
+			b -= lr * db
+		return m, b, cost
 
-x = np.array([1, 2, 3, 4])
-y = np.array([2, 4, 6, 8])
-m, b, final_cost = gradient_descent(x, y, lr=0.01, iterations=1000)
-print("Slope:", m, "Intercept:", b, "Final Cost:", final_cost)
-							</code>
-</pre>
+	x = np.array([1, 2, 3, 4])
+	y = np.array([2, 4, 6, 8])
+	m, b, final_cost = gradient_descent(x, y, lr=0.01, iterations=1000)
+	print("Slope:", m, "Intercept:", b, "Final Cost:", final_cost)
+								</code>
+	</pre>
+					</section>
 				</section>
 
 			</div>

@@ -55,52 +55,54 @@
 						</div>
 					</section>
 				<section class="wrapper">
-					<pre>
-						<code>
-# Calculating covariance and correlation
-import numpy as np
-import pandas as pd
+					<section class="inner">
+						<pre>
+							<code>
+	# Calculating covariance and correlation
+	import numpy as np
+	import pandas as pd
 
-# Example dataset
-data = {'X': [1, 2, 3, 4, 5], 'Y': [2, 4, 5, 4, 5]}
-df = pd.DataFrame(data)
+	# Example dataset
+	data = {'X': [1, 2, 3, 4, 5], 'Y': [2, 4, 5, 4, 5]}
+	df = pd.DataFrame(data)
 
-# Covariance
-covariance = np.cov(df['X'], df['Y'])[0, 1]
-print("Covariance:", covariance)
+	# Covariance
+	covariance = np.cov(df['X'], df['Y'])[0, 1]
+	print("Covariance:", covariance)
 
-# Correlation
-correlation = np.corrcoef(df['X'], df['Y'])[0, 1]
-print("Correlation:", correlation)
-						</code>
-</pre>
+	# Correlation
+	correlation = np.corrcoef(df['X'], df['Y'])[0, 1]
+	print("Correlation:", correlation)
+							</code>
+	</pre>
 
-					<pre>
-						<code>
-# Simple linear regression example
-from sklearn.linear_model import LinearRegression
-import matplotlib.pyplot as plt
+						<pre>
+							<code>
+	# Simple linear regression example
+	from sklearn.linear_model import LinearRegression
+	import matplotlib.pyplot as plt
 
-# Prepare data
-X = df['X'].values.reshape(-1, 1)
-Y = df['Y'].values
+	# Prepare data
+	X = df['X'].values.reshape(-1, 1)
+	Y = df['Y'].values
 
-# Train the model
-model = LinearRegression()
-model.fit(X, Y)
+	# Train the model
+	model = LinearRegression()
+	model.fit(X, Y)
 
-# Predictions
-Y_pred = model.predict(X)
+	# Predictions
+	Y_pred = model.predict(X)
 
-# Visualize
-plt.scatter(df['X'], df['Y'], color='blue')
-plt.plot(df['X'], Y_pred, color='red')
-plt.title('Linear Regression')
-plt.xlabel('X')
-plt.ylabel('Y')
-plt.show()
-						</code>
-</pre>
+	# Visualize
+	plt.scatter(df['X'], df['Y'], color='blue')
+	plt.plot(df['X'], Y_pred, color='red')
+	plt.title('Linear Regression')
+	plt.xlabel('X')
+	plt.ylabel('Y')
+	plt.show()
+							</code>
+	</pre>
+					</section>
 				</section>
 
 			</div>
