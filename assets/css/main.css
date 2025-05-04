@@ -1,4 +1,9 @@
-@import url(fontawesome-all.min.css);
+@import url(all.min.css);
+@import url(brands.min.css);
+@import url(fontawesome.min.css);
+@import url(regular.min.css);
+@import url(solid.min.css);
+@import url(v5-font-face.min.css);
 
 /*
 	Hyperspace by HTML5 UP
