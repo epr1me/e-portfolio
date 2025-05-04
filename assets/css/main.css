@@ -3108,11 +3108,10 @@ input, select, textarea {
 		.spotlights > section:nth-child(3) {
 			background-color: rgba(0, 0, 0, 0.1);
 		}
-		.spotlights > section:nth-child(3) {
+		.spotlights > section:nth-child(4) {
 			background-color: rgba(0, 0, 0, 0.15);
 		}
-
-		.spotlights > section:nth-child(4) {
+		.spotlights > section:nth-child(5) {
 			background-color: rgba(0, 0, 0, 0.2);
 		}
 
