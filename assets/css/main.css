@@ -1,4 +1,4 @@
-@import url(fontawesome-all.min.css);
+@import url(all.min.css);
 
 /*
 	Hyperspace by HTML5 UP
@@ -89,7 +89,7 @@ input, select, textarea {
 	right: 10px;
 }
 .next-unit i {
-	font-family: 'Font Awesome 5 Free';
+	font-family: 'Font Awesome 6 Free';
 	font-style: normal;
 }
 
@@ -2457,7 +2457,7 @@ input, select, textarea {
 				text-rendering: auto;
 				line-height: 1;
 				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
+				font-family: 'Font Awesome 6 Free';
 				font-weight: 900;
 			}
 
@@ -2528,19 +2528,6 @@ input, select, textarea {
 		position: relative;
 	}
 
-		.icon:before {
-			-moz-osx-font-smoothing: grayscale;
-			-webkit-font-smoothing: antialiased;
-			display: inline-block;
-			font-style: normal;
-			font-variant: normal;
-			text-rendering: auto;
-			line-height: 1;
-			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
-			font-weight: 400;
-		}
-
 		.icon > .label {
 			display: none;
 		}
@@ -2554,7 +2541,7 @@ input, select, textarea {
 		}
 
 		.icon.brands:before {
-			font-family: 'Font Awesome 5 Brands';
+			font-family: 'Font Awesome 6 Brands';
 		}
 
 		.icon.major {
@@ -3108,11 +3095,10 @@ input, select, textarea {
 		.spotlights > section:nth-child(3) {
 			background-color: rgba(0, 0, 0, 0.1);
 		}
-		.spotlights > section:nth-child(3) {
+		.spotlights > section:nth-child(4) {
 			background-color: rgba(0, 0, 0, 0.15);
 		}
-
-		.spotlights > section:nth-child(4) {
+		.spotlights > section:nth-child(5) {
 			background-color: rgba(0, 0, 0, 0.2);
 		}
 
