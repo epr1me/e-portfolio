@@ -36,7 +36,36 @@
     <section id="main" class="wrapper pt-10-m">
         <div class="inner">
             <h1 class="major">Unit 8 - Understanding Natural Language Processing</h1>
-            <p>Coming soon</p>
+
+            <p>For this task, I created constituency-based parse trees for three English sentences. These trees illustrate the hierarchical phrase structure of natural language using standard syntactic categories (e.g. NP = noun phrase, VP = verb phrase, PP = prepositional phrase). This exercise demonstrates how language can be structurally analysed for natural language processing (NLP) tasks, which are essential in intelligent systems.</p>
+
+            <h2>1. The government raised interest rates.</h2>
+            <pre>
+(S
+  (NP (DT The) (NN government))
+  (VP (VBD raised)
+    (NP (NN interest) (NNS rates))))
+</pre>
+
+            <h2>2. The internet gives everyone a voice.</h2>
+            <pre>
+(S
+  (NP (DT The) (NN internet))
+  (VP (VBZ gives)
+    (NP (NN everyone))
+    (NP (DT a) (NN voice))))
+</pre>
+
+            <h2>3. The man saw the dog with the telescope.</h2>
+            <pre>
+(S
+  (NP (DT The) (NN man))
+  (VP (VBD saw)
+    (NP
+      (NP (DT the) (NN dog))
+      (PP (IN with)
+          (NP (DT the) (NN telescope))))))
+</pre>
         </div>
     </section>
 

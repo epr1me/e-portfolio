@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-    <title>Unit 6 - Working Together</title>
+    <title>Unit 6 - Creating Agent Dialogues</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="robots" content="noindex">
@@ -35,8 +35,58 @@
     <!-- Main -->
     <section id="main" class="wrapper pt-10-m">
         <div class="inner">
-            <h1 class="major">Unit 6 - Working Together</h1>
-            <p>Coming soon</p>
+            <h1 class="major">Unit 6 - Creating Agent Dialogues</h1>
+            <p>For this task, I created a sample dialogue between two software agents using <strong>KQML</strong> (Knowledge Query and Manipulation Language) as the communication protocol and <strong>KIF</strong> (Knowledge Interchange Format) for expressing the knowledge content.</p>
+
+            <p>In the scenario, <strong>Alice</strong> is a procurement agent responsible for sourcing products, and <strong>Bob</strong> is a warehouse agent who manages stock levels. Alice inquires about the availability of 50-inch televisions and their HDMI specifications.</p>
+
+            <pre>
+;;; Alice sends a query to Bob asking about the stock of 50-inch televisions
+(kqml
+  :performative ask-one
+  :sender Alice
+  :receiver Bob
+  :language KIF
+  :ontology warehouse-stock
+  :content
+    (exists ((?tv television))
+      (and
+        (has-size ?tv "50 inch")
+        (in-stock ?tv ?quantity))))
+
+;;; Bob replies with the quantity available
+(kqml
+  :performative tell
+  :sender Bob
+  :receiver Alice
+  :language KIF
+  :ontology warehouse-stock
+  :content
+    (and
+      (has-size tv-001 "50 inch")
+      (in-stock tv-001 24)))
+
+;;; Alice then asks how many HDMI slots the televisions have
+(kqml
+  :performative ask-one
+  :sender Alice
+  :receiver Bob
+  :language KIF
+  :ontology warehouse-specs
+  :content
+    (has-feature tv-001 (hdmi-slots ?slots)))
+
+;;; Bob responds with the HDMI slot specification
+(kqml
+  :performative tell
+  :sender Bob
+  :receiver Alice
+  :language KIF
+  :ontology warehouse-specs
+  :content
+    (has-feature tv-001 (hdmi-slots 3)))
+</pre>
+
         </div>
     </section>
 
